@@ -1,0 +1,7 @@
+Django==5.0.2
+fastapi==0.109.2
+requests
+uvicorn
+fastapi_versioning
+python-dotenv
+pydantic
