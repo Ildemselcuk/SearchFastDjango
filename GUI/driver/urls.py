@@ -2,6 +2,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.get, name='drivers'),
+    path('', views.get_drivers, name='drivers'),
  
 ]

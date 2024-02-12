@@ -13,7 +13,7 @@ def _extend_api(path):
     return BASE_API_URL + path
 
 
-def get_driver_data(request):
+def get_drivers(request):
     """
     View function to handle GET requests for driver data.
     """
