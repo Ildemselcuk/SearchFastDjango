@@ -6,22 +6,13 @@ from fastapi_versioning import VersionedFastAPI
 from starlette.middleware.cors import CORSMiddleware
 from fastapi.middleware.trustedhost import TrustedHostMiddleware
 
-from src.app.country import models as country_models
-from src.app.user import models as user_models
-from src.app.user_identity import models as user_identity_models
-from src.app.user_identity_avatar import models as user_identity_avatar_models
 
-from src.app.country.router import router as country_router
-from src.app.user.router import router as user_router
-from src.app.user_identity.router import router as user_identity_router
-from src.app.user_identity_avatar.router import router as user_identity_avatar_router
+from RESTful.driver.router import router as driver_router
 
-from src.app.database import SessionLocal, engine
 
-country_models.Base.metadata.create_all(bind=engine)
-user_models.Base.metadata.create_all(bind=engine)
-user_identity_models.Base.metadata.create_all(bind=engine)
-user_identity_avatar_models.Base.metadata.create_all(bind=engine)
+from RESTful.database import SessionLocal, engine
+
+
 
 app = FastAPI(
     title="IDENTITY Service",
@@ -32,10 +23,7 @@ app = FastAPI(
     swagger_ui_parameters={"tryItOutEnabled": True},
 )
 
-app.include_router(country_router)
-app.include_router(user_router)
-app.include_router(user_identity_router)
-app.include_router(user_identity_avatar_router)
+app.include_router(driver_router)
 
 app = VersionedFastAPI(app,
                        enable_latest=True,

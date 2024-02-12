@@ -3,7 +3,6 @@ from datetime import datetime
 
 from sqlalchemy import JSON, DateTime, Column, String, Index
 
-from RESTful.db_constants import PREFIX_COUNTRY_UUID, PREFIX_COUNTRY_TABLE
 from RESTful.database import Base
 
 
