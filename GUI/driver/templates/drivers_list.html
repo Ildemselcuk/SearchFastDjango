@@ -4,24 +4,14 @@
     <title>Driver Data</title>
 </head>
 <body>
-
-    <form id="filterForm" action="http://localhost:8000/drivers" method="GET">
-        <label for="minDate">Min Date:</label>
-        <input type="date" id="minDate" name="minDate">
-        <label for="maxDate">Max Date:</label>
-        <input type="date" id="maxDate" name="maxDate">
-        <label for="minScore">Min Score:</label>
-        <input type="number" id="minScore" name="minScore" step="0.01">
-        <label for="maxScore">Max Score:</label>
-        <input type="number" id="maxScore" name="maxScore" step="0.01">
-        <label for="limit">Limit:</label>
-        <input type="number" id="limit" name="limit" value="50">
-        <label for="offset">Offset:</label>
-        <input type="number" id="offset" name="offset" value="0">
+    <h1>Driver Data</h1>
+    <form method="GET" action="{% url 'get_driver_data' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
         <button type="submit">Filter</button>
     </form>
-    
-    {% if drivers|length > 0 %}
+
+    {% if drivers %}
     <table>
         <thead>
             <tr>
@@ -33,22 +23,20 @@
                 <th>Age</th>
                 <th>Created At</th>
                 <th>Updated At</th>
-                <!-- Diğer sütun başlıkları buraya eklenebilir -->
             </tr>
         </thead>
         <tbody>
             {% for driver in drivers %}
-                <tr>
-                    <td>{{ driver.id }}</td>
-                    <td>{{ driver.email }}</td>
-                    <td>{{ driver.first_name }}</td>
-                    <td>{{ driver.last_name }}</td>
-                    <td>{{ driver.driving_score }}</td>
-                    <td>{{ driver.age }}</td>
-                    <td>{{ driver.created_at }}</td>
-                    <td>{{ driver.updated_at }}</td>
-                    <!-- Diğer sütun değerleri buraya eklenebilir -->
-                </tr>
+            <tr>
+                <td>{{ driver.id }}</td>
+                <td>{{ driver.email }}</td>
+                <td>{{ driver.first_name }}</td>
+                <td>{{ driver.last_name }}</td>
+                <td>{{ driver.driving_score }}</td>
+                <td>{{ driver.age }}</td>
+                <td>{{ driver.created_at }}</td>
+                <td>{{ driver.updated_at }}</td>
+            </tr>
             {% endfor %}
         </tbody>
     </table>
