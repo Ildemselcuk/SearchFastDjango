@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View
 import requests
 
-BASE_API_URL = 'http://localhost:5000/'
+BASE_API_URL = 'http://api.example.com:5000'
 
 
 def _extend_api(path):

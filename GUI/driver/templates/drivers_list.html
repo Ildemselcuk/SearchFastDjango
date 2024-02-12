@@ -4,6 +4,23 @@
     <title>Driver Data</title>
 </head>
 <body>
+
+    <form id="filterForm" action="http://localhost:8000/drivers" method="GET">
+        <label for="minDate">Min Date:</label>
+        <input type="date" id="minDate" name="minDate">
+        <label for="maxDate">Max Date:</label>
+        <input type="date" id="maxDate" name="maxDate">
+        <label for="minScore">Min Score:</label>
+        <input type="number" id="minScore" name="minScore" step="0.01">
+        <label for="maxScore">Max Score:</label>
+        <input type="number" id="maxScore" name="maxScore" step="0.01">
+        <label for="limit">Limit:</label>
+        <input type="number" id="limit" name="limit" value="50">
+        <label for="offset">Offset:</label>
+        <input type="number" id="offset" name="offset" value="0">
+        <button type="submit">Filter</button>
+    </form>
+    
     {% if drivers|length > 0 %}
     <table>
         <thead>
