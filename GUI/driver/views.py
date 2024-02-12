@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .forms import DriverForm
 
 # Base URL for the FastAPI endpoint
-BASE_API_URL = 'http://api.example.com:5000'
+BASE_API_URL = 'https://search-fast-django-b5ee864cf0f8.herokuapp.com/'
 
 
 def _extend_api(path):
