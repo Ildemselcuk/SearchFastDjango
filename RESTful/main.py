@@ -13,7 +13,6 @@ from RESTful.driver.router import router as driver_router
 from RESTful.database import SessionLocal, engine
 
 
-
 app = FastAPI(
     title="IDENTITY Service",
     description="Each endpoint requires <code>x-user-uuid</code> and <code>x-user-identity-uuid</code> in header "
@@ -71,7 +70,7 @@ async def add_process_time_header(request: Request, call_next):
     process_time = time.time() - start_time
     response.headers["X-Process-Time"] = str(process_time)
     return response
- 
+
 
 if __name__ == "__main__":
     import uvicorn

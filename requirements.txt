@@ -5,3 +5,5 @@ uvicorn
 fastapi_versioning
 python-dotenv
 pydantic
+sqlalchemy
+psycopg2-binary

@@ -3,7 +3,7 @@ from fastapi_versioning import version
 from sqlalchemy.orm import Session
 from RESTful.common.dependencies import get_db
 from RESTful.driver import service
-from RESTful.driver.schemas import CountrySchema, DriverSchema, RequestParams
+from RESTful.driver.schemas import  DriverSchema, RequestParams
 
 router = APIRouter(
     prefix="/driver",
