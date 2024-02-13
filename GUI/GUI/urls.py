@@ -18,5 +18,7 @@ from django.urls import path
 from django.urls import include
 
 urlpatterns = [
-    path('driver/', include('driver.urls'))
+    path('driver/', include('driver.urls')),
+    path('', include('driver.urls'))
+
 ]
