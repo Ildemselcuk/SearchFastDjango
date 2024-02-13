@@ -1,9 +1,9 @@
 Django==5.0.2
 fastapi==0.109.2
-requests
-uvicorn
-fastapi_versioning
-python-dotenv
-pydantic
-sqlalchemy
-psycopg2-binary
+requests==2.31.0 
+uvicorn==0.27.1 
+fastapi-versioning==0.10.0 
+python-dotenv==1.0.1 
+pydantic==2.6.1 
+sqlalchemy==2.0.27
+psycopg2-binary==2.9.9 
