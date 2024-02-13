@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Driver Data</h1>
-    <form method="GET" action="{% url 'get_driver_data' %}">
+    <form method="GET" action="{% url 'drivers' %}">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Filter</button>

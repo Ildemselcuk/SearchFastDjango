@@ -50,4 +50,4 @@ def get_drivers(request):
         return render(request, "driver_list.html", context)
 
     # If no GET request was made or the form is invalid, reload the page with an empty form
-    return render(request, "driver_list.html", {'form': form})
+    return render(request, "drivers_list.html", {'form': form})
