@@ -25,7 +25,8 @@ SECRET_KEY = "django-insecure-mfvh-_d6is2xsa$hx3a8kx!3sinuehf4f#g9qe@nw(mia&jv87
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'https://search-fast-django-b5ee864cf0f8.herokuapp.com', '127.0.0.1', 'localhost']
 
 # Application definition
 
@@ -132,26 +133,26 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 LOGGING = {
-        'version': 1,
-        'disable_existing_loggers': False,
-        'formatters': {
-            'default': {
-                'format': '[DJANGO] %(levelname)s %(asctime)s %(module)s '
-                          '%(name)s.%(funcName)s:%(lineno)s: %(message)s'
-            },
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'default': {
+            'format': '[DJANGO] %(levelname)s %(asctime)s %(module)s '
+            '%(name)s.%(funcName)s:%(lineno)s: %(message)s'
         },
-        'handlers': {
-            'console': {
-                'level': 'DEBUG',
-                'class': 'logging.StreamHandler',
-                'formatter': 'default',
-            }
-        },
-        'loggers': {
-            '*': {
-                'handlers': ['console'],
-                'level': 'DEBUG',
-                'propagate': True,
-            }
-        },
-    }
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+            'formatter': 'default',
+        }
+    },
+    'loggers': {
+        '*': {
+            'handlers': ['console'],
+            'level': 'DEBUG',
+            'propagate': True,
+        }
+    },
+}

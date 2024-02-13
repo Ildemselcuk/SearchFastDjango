@@ -2,6 +2,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('', views.get_drivers, name='home'),
     path('', views.get_drivers, name='drivers'),
  
 ]
